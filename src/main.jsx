@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App, { appLoader } from "./App.jsx";
-import Dashboard, { dashboardLoader } from "./pages/Dashboard.jsx";
+import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard.jsx";
 import Error from "./pages/Error.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { logoutAction } from "./actions/logout.js";
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard />,
         loader: dashboardLoader,
+        action:dashboardAction,
         errorElement: <Error />,
       },
       {
